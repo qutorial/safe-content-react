@@ -1,25 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import HazardComponent from './HazardComponent';
+
+function sanitizeMercator(s){
+  
+}
 
 function App() {
+  const hazard='<p onclick="alert(\'Hacked!\');">click me</p><ul><li>one</li></ul>Some of this text shall be <b>fat</b> and then on the <br> next line.<table><tr><td>and a little</td><td>table</td></tr></table>';
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HazardComponent hazardWarning={hazard}></HazardComponent>
   );
 }
 
